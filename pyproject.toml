@@ -7,7 +7,7 @@ name = "aiganak-llm-prices"
 version = "2026.11.2"
 description = "LLM API list prices for OpenAI, Anthropic and Google models, with a token cost calculator."
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 license = "MIT"
 license-files = ["LICENSE", "LICENSE-DATA"]
 authors = [{ name = "AiGanak", email = "contact@aiganak.com" }]
