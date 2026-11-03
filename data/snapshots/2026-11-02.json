@@ -1,0 +1,430 @@
+{
+  "$schema": "../schema/prices.schema.json",
+  "schema_version": "1.0.0",
+  "dataset": "llm-api-prices",
+  "publisher": {
+    "name": "AiGanak",
+    "url": "https://aiganak.com"
+  },
+  "license": "CC-BY-4.0",
+  "currency": "USD",
+  "unit": "per_million_tokens",
+  "modality": "text",
+  "tier_basis": "standard pay-as-you-go list price",
+  "checked": "2026-11-02",
+  "models": [
+    {
+      "id": "gpt-6-astra",
+      "provider": "OpenAI",
+      "name": "GPT-6 Astra",
+      "tier": "flagship",
+      "status": "active",
+      "pricing": {
+        "standard": {
+          "input": 10,
+          "cached_input": 1,
+          "output": 50
+        },
+        "batch": {
+          "input": 5,
+          "cached_input": 0.5,
+          "output": 25
+        },
+        "cache_write": 12.5,
+        "long_context": {
+          "threshold_tokens": 272000,
+          "standard": {
+            "input": 20,
+            "cached_input": 2,
+            "output": 75
+          },
+          "note": "Prompts over 272K input tokens cost 2x input and cache rates and 1.5x output for the whole request."
+        }
+      },
+      "scheduled_changes": [],
+      "source_url": "https://developers.openai.com/api/docs/models/gpt-6-astra",
+      "reference_url": "https://aiganak.com/llm-api-pricing/gpt-6-astra/",
+      "checked": "2026-11-02"
+    },
+    {
+      "id": "gpt-6.1-sol",
+      "provider": "OpenAI",
+      "name": "GPT-6.1 Sol",
+      "tier": "mid",
+      "status": "active",
+      "pricing": {
+        "standard": {
+          "input": 2,
+          "cached_input": 0.1,
+          "output": 10
+        },
+        "batch": {
+          "input": 1,
+          "cached_input": 0.05,
+          "output": 5
+        },
+        "cache_write": 2.5,
+        "long_context": {
+          "threshold_tokens": 272000,
+          "standard": {
+            "input": 4,
+            "cached_input": 0.2,
+            "output": 15
+          },
+          "note": "Prompts over 272K input tokens cost 2x input and cache rates and 1.5x output for the whole request."
+        }
+      },
+      "scheduled_changes": [],
+      "source_url": "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+      "reference_url": "https://aiganak.com/llm-api-pricing/gpt-6.1-sol/",
+      "checked": "2026-11-02"
+    },
+    {
+      "id": "gpt-6.1-terra",
+      "provider": "OpenAI",
+      "name": "GPT-6.1 Terra",
+      "tier": "mid",
+      "status": "active",
+      "pricing": {
+        "standard": {
+          "input": 1,
+          "cached_input": 0.05,
+          "output": 5
+        },
+        "batch": {
+          "input": 0.5,
+          "cached_input": 0.025,
+          "output": 2.5
+        },
+        "cache_write": 1.25,
+        "long_context": {
+          "threshold_tokens": 272000,
+          "standard": {
+            "input": 2,
+            "cached_input": 0.1,
+            "output": 7.5
+          },
+          "note": "Prompts over 272K input tokens cost 2x input and cache rates and 1.5x output for the whole request."
+        }
+      },
+      "scheduled_changes": [],
+      "source_url": "https://developers.openai.com/api/docs/models/gpt-6.1-terra",
+      "reference_url": "https://aiganak.com/llm-api-pricing/gpt-6.1-terra/",
+      "checked": "2026-11-02"
+    },
+    {
+      "id": "gpt-6-luna",
+      "provider": "OpenAI",
+      "name": "GPT-6 Luna",
+      "tier": "small",
+      "status": "active",
+      "pricing": {
+        "standard": {
+          "input": 0.1,
+          "cached_input": 0.01,
+          "output": 0.5
+        },
+        "batch": {
+          "input": 0.05,
+          "cached_input": 0.005,
+          "output": 0.25
+        },
+        "cache_write": 0.125,
+        "long_context": {
+          "threshold_tokens": 272000,
+          "standard": {
+            "input": 0.2,
+            "cached_input": 0.02,
+            "output": 0.75
+          },
+          "note": "Prompts over 272K input tokens cost 2x input and cache rates and 1.5x output for the whole request."
+        }
+      },
+      "scheduled_changes": [],
+      "source_url": "https://developers.openai.com/api/docs/models/gpt-6-luna",
+      "reference_url": "https://aiganak.com/llm-api-pricing/gpt-6-luna/",
+      "checked": "2026-11-02"
+    },
+    {
+      "id": "claude-fable-5-1",
+      "provider": "Anthropic",
+      "name": "Claude Fable 5.1",
+      "tier": "flagship",
+      "status": "active",
+      "pricing": {
+        "standard": {
+          "input": 10,
+          "cached_input": 0.25,
+          "output": 50
+        },
+        "batch": {
+          "input": 5,
+          "cached_input": 0.125,
+          "output": 25
+        },
+        "cache_write": 12.5
+      },
+      "scheduled_changes": [],
+      "source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
+      "reference_url": "https://aiganak.com/llm-api-pricing/claude-fable-5-1/",
+      "checked": "2026-11-02"
+    },
+    {
+      "id": "claude-opus-5-5",
+      "provider": "Anthropic",
+      "name": "Claude Opus 5.5",
+      "tier": "flagship",
+      "status": "active",
+      "pricing": {
+        "standard": {
+          "input": 4,
+          "cached_input": 0.2,
+          "output": 20
+        },
+        "batch": {
+          "input": 2,
+          "cached_input": 0.1,
+          "output": 10
+        },
+        "cache_write": 5
+      },
+      "scheduled_changes": [],
+      "source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
+      "reference_url": "https://aiganak.com/llm-api-pricing/claude-opus-5-5/",
+      "checked": "2026-11-02"
+    },
+    {
+      "id": "claude-sonnet-5-5",
+      "provider": "Anthropic",
+      "name": "Claude Sonnet 5.5",
+      "tier": "mid",
+      "status": "active",
+      "pricing": {
+        "standard": {
+          "input": 2,
+          "cached_input": 0.1,
+          "output": 10
+        },
+        "batch": {
+          "input": 1,
+          "cached_input": 0.05,
+          "output": 5
+        },
+        "cache_write": 2.5
+      },
+      "scheduled_changes": [],
+      "source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
+      "reference_url": "https://aiganak.com/llm-api-pricing/claude-sonnet-5-5/",
+      "checked": "2026-11-02"
+    },
+    {
+      "id": "claude-haiku-5-5",
+      "provider": "Anthropic",
+      "name": "Claude Haiku 5.5",
+      "tier": "small",
+      "status": "active",
+      "pricing": {
+        "standard": {
+          "input": 0.1,
+          "cached_input": 0.01,
+          "output": 0.5
+        },
+        "batch": {
+          "input": 0.05,
+          "cached_input": 0.005,
+          "output": 0.25
+        },
+        "cache_write": 0.125,
+        "long_context": {
+          "threshold_tokens": 100000,
+          "standard": {
+            "input": 0.5,
+            "cached_input": 0.05,
+            "output": 2.5
+          },
+          "note": "Requests whose prompt is over 100,000 tokens (including cache reads and writes) pay higher rates."
+        }
+      },
+      "scheduled_changes": [],
+      "source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
+      "reference_url": "https://aiganak.com/llm-api-pricing/claude-haiku-5-5/",
+      "checked": "2026-11-02"
+    },
+    {
+      "id": "claude-haiku-4-5",
+      "provider": "Anthropic",
+      "name": "Claude Haiku 4.5",
+      "tier": "small",
+      "status": "legacy",
+      "pricing": {
+        "standard": {
+          "input": 1,
+          "cached_input": 0.1,
+          "output": 5
+        },
+        "batch": {
+          "input": 0.5,
+          "cached_input": 0.05,
+          "output": 2.5
+        },
+        "cache_write": 1.25
+      },
+      "scheduled_changes": [],
+      "source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
+      "reference_url": "https://aiganak.com/llm-api-pricing/claude-haiku-4-5/",
+      "checked": "2026-11-02"
+    },
+    {
+      "id": "gemini-4-argon",
+      "provider": "Google",
+      "name": "Gemini 4 Argon",
+      "tier": "flagship",
+      "status": "active",
+      "pricing": {
+        "standard": {
+          "input": 2,
+          "cached_input": 0.1,
+          "output": 10
+        },
+        "batch": {
+          "input": 1,
+          "cached_input": 0.05,
+          "output": 5
+        }
+      },
+      "scheduled_changes": [
+        {
+          "effective": "2026-12-01",
+          "standard": {
+            "input": 4,
+            "cached_input": 0.2,
+            "output": 20
+          },
+          "batch": {
+            "input": 2,
+            "cached_input": 0.1,
+            "output": 10
+          }
+        }
+      ],
+      "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
+      "reference_url": "https://aiganak.com/llm-api-pricing/gemini-4-argon/",
+      "checked": "2026-11-02"
+    },
+    {
+      "id": "gemini-3.1-pro-preview",
+      "provider": "Google",
+      "name": "Gemini 3.1 Pro (preview)",
+      "tier": "flagship",
+      "status": "preview",
+      "pricing": {
+        "standard": {
+          "input": 2,
+          "cached_input": 0.2,
+          "output": 12
+        },
+        "batch": {
+          "input": 1,
+          "cached_input": 0.2,
+          "output": 6
+        },
+        "long_context": {
+          "threshold_tokens": 200000,
+          "standard": {
+            "input": 4,
+            "cached_input": 0.4,
+            "output": 18
+          },
+          "note": "Prompts over 200K tokens pay higher rates."
+        }
+      },
+      "scheduled_changes": [],
+      "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
+      "reference_url": "https://aiganak.com/llm-api-pricing/gemini-3.1-pro-preview/",
+      "checked": "2026-11-02"
+    },
+    {
+      "id": "gemini-3.8-flash",
+      "provider": "Google",
+      "name": "Gemini 3.8 Flash",
+      "tier": "mid",
+      "status": "active",
+      "pricing": {
+        "standard": {
+          "input": 0.75,
+          "cached_input": 0.075,
+          "output": 3.75
+        },
+        "batch": {
+          "input": 0.375,
+          "cached_input": 0.0375,
+          "output": 1.875
+        }
+      },
+      "scheduled_changes": [
+        {
+          "effective": "2027-01-01",
+          "standard": {
+            "input": 1.5,
+            "cached_input": 0.15,
+            "output": 7.5
+          },
+          "batch": {
+            "input": 0.75,
+            "cached_input": 0.075,
+            "output": 3.75
+          }
+        }
+      ],
+      "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
+      "reference_url": "https://aiganak.com/llm-api-pricing/gemini-3.8-flash/",
+      "checked": "2026-11-02"
+    },
+    {
+      "id": "gemini-3.5-flash-lite",
+      "provider": "Google",
+      "name": "Gemini 3.5 Flash-Lite",
+      "tier": "small",
+      "status": "active",
+      "pricing": {
+        "standard": {
+          "input": 0.3,
+          "cached_input": 0.03,
+          "output": 2.5
+        },
+        "batch": {
+          "input": 0.15,
+          "cached_input": 0.02,
+          "output": 1.25
+        }
+      },
+      "scheduled_changes": [],
+      "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
+      "reference_url": "https://aiganak.com/llm-api-pricing/gemini-3.5-flash-lite/",
+      "checked": "2026-11-02"
+    },
+    {
+      "id": "gemini-3.1-flash-lite",
+      "provider": "Google",
+      "name": "Gemini 3.1 Flash-Lite",
+      "tier": "small",
+      "status": "active",
+      "pricing": {
+        "standard": {
+          "input": 0.25,
+          "cached_input": 0.025,
+          "output": 1.5
+        },
+        "batch": {
+          "input": 0.125,
+          "cached_input": 0.0125,
+          "output": 0.75
+        }
+      },
+      "scheduled_changes": [],
+      "source_url": "https://ai.google.dev/gemini-api/docs/pricing",
+      "reference_url": "https://aiganak.com/llm-api-pricing/gemini-3.1-flash-lite/",
+      "checked": "2026-11-02"
+    }
+  ]
+}

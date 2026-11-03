@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this dataset, please cite it as below."
+type: dataset
+title: "LLM API Prices: list prices for OpenAI, Anthropic and Google models"
+authors:
+  - name: "AiGanak"
+    website: "https://aiganak.com"
+repository-code: "https://github.com/AiGanak/llm-prices"
+url: "https://aiganak.com/llm-api-pricing/"
+license: CC-BY-4.0
+version: "2026.11.02"
+date-released: "2026-11-03"
+keywords:
+  - large language models
+  - LLM pricing
+  - API pricing
+  - OpenAI
+  - Anthropic
+  - Gemini

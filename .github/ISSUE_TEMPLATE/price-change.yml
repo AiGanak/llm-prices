@@ -1,0 +1,17 @@
+name: Price change
+description: Report a price that has changed, or a new model.
+title: "[price] <model id>: <what changed>"
+labels: ["price-change"]
+body:
+  - type: input
+    id: model
+    attributes: { label: Model ID, placeholder: gpt-6.1-terra }
+    validations: { required: true }
+  - type: textarea
+    id: change
+    attributes: { label: What changed, description: "Old and new price per million tokens, and the effective date if announced." }
+    validations: { required: true }
+  - type: input
+    id: source
+    attributes: { label: Source, description: "Link to the provider's own pricing or model page." }
+    validations: { required: true }
