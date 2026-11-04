@@ -40,6 +40,21 @@ USD per million tokens, standard tier, text. Checked 2026-11-02.
 
 Per-model detail, worked examples and head-to-head comparisons: [aiganak.com/llm-api-pricing](https://aiganak.com/llm-api-pricing/).
 
+## Language token tax
+
+The same text costs a different number of tokens in each language, and every model family tokenizes differently. [`data/token-tax/`](data/token-tax/) holds a 12-message business corpus in English and 22 other languages, the official token counts per model, and the [counting script](scripts/count_tokens.py). Selected results (tokens as a multiple of English on the same model, measured 4 November 2026):
+
+| Language | OpenAI GPT-6 | Claude 5.x | Gemini 3.x | Gemini 4 Argon |
+|---|--:|--:|--:|--:|
+| Hindi | 1.43× | 2.28× | 1.18× | 1.28× |
+| Tamil | 1.91× | 3.21× | 1.36× | 1.65× |
+| Kannada | 1.89× | 6.38× | 1.82× | 2.05× |
+| Odia | 4.85× | 5.33× | 3.37× | 2.29× |
+| German | 1.25× | 1.99× | 1.29× | 1.27× |
+| Chinese | 1.03× | 1.01× | 0.96× | 0.90× |
+
+Full index for 23 languages, with a free checker for your own text: [aiganak.com/language-token-tax](https://aiganak.com/language-token-tax/).
+
 ## Quick start
 
 ### Use the JSON directly
