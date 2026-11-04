@@ -44,6 +44,12 @@ def post(url: str, body: dict, headers: dict) -> dict:
                 time.sleep(2 ** attempt)
                 continue
             raise RuntimeError(f"HTTP {e.code}: {e.read().decode(errors='replace')[:300]}") from None
+        except urllib.error.URLError as e:
+            if "CERTIFICATE_VERIFY_FAILED" in str(e.reason):
+                sys.exit("Python cannot verify HTTPS certificates. On a Mac with Python from python.org, run once:\n"
+                         f'  open "/Applications/Python {sys.version_info.major}.{sys.version_info.minor}/Install Certificates.command"\n'
+                         "then run this script again.")
+            raise RuntimeError(f"network error: {e.reason}") from None
     raise RuntimeError("unreachable")
 
 
