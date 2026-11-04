@@ -2,6 +2,7 @@
 using each provider's official token-counting endpoint.
 
     export ANTHROPIC_API_KEY=...   # optional, any provider without a key is skipped
+    export ANTHROPIC_WORKSPACE_ID=... # only if your Anthropic key is not scoped to a workspace
     export GEMINI_API_KEY=...
     export OPENAI_API_KEY=...
     python3 scripts/count_tokens.py
@@ -57,7 +58,8 @@ def count(provider: str, model: str, text: str, key: str) -> int:
     if provider == "Anthropic":
         r = post("https://api.anthropic.com/v1/messages/count_tokens",
                  {"model": model, "messages": [{"role": "user", "content": text}]},
-                 {"x-api-key": key, "anthropic-version": "2023-06-01"})
+                 {"x-api-key": key, "anthropic-version": "2023-06-01",
+                  **({"anthropic-workspace-id": os.environ["ANTHROPIC_WORKSPACE_ID"]} if os.environ.get("ANTHROPIC_WORKSPACE_ID") else {})})
         return r["input_tokens"]
     if provider == "OpenAI":
         r = post("https://api.openai.com/v1/responses/input_tokens", {"model": model, "input": text},
@@ -69,12 +71,15 @@ def count(provider: str, model: str, text: str, key: str) -> int:
 
 
 def main() -> int:
+    only = set(sys.argv[1:])  # optional: provider names to run, e.g. Anthropic
     langs = sorted(p.stem for p in CORPUS.glob("*.txt"))
     texts = {l: (CORPUS / f"{l}.txt").read_text(encoding="utf-8").strip() for l in langs}
     out = {"date": date.today().isoformat(), "corpus": "data/token-tax/*.txt", "method":
            "Official count endpoint per model. Each language's 12 lines are sent as one user message; "
            "message overhead is removed by subtracting count('x') - 1.", "models": {}}
     for provider, models in MODELS.items():
+        if only and provider not in only:
+            continue
         key = os.environ.get(KEYS[provider])
         if not key:
             print(f"- {provider}: no {KEYS[provider]} set, skipped")
@@ -96,7 +101,7 @@ def main() -> int:
     if not out["models"]:
         print("No models measured. Set at least one API key.")
         return 1
-    path = CORPUS / f"results-{out['date']}.json"
+    path = CORPUS / (f"results-{out['date']}" + ("-" + "-".join(sorted(only)).lower() if only else "") + ".json")
     path.write_text(json.dumps(out, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print(f"\nSaved {path.relative_to(ROOT)}")
     return 0
