@@ -1,0 +1,61 @@
+{
+  "date": "2026-11-04",
+  "corpus": "data/token-tax/*.txt",
+  "method": "Public OpenAI tokenizers via js-tiktoken 1.0.21, counted on the raw text (no message overhead).",
+  "tokenizers": {
+    "o200k_base": {
+      "tokens": {
+        "ar": 346,
+        "bn": 446,
+        "de": 344,
+        "en": 276,
+        "es": 334,
+        "fr": 338,
+        "gu": 462,
+        "hi": 394,
+        "hi-Latn": 389,
+        "id": 354,
+        "ja": 378,
+        "kn": 522,
+        "ko": 379,
+        "ml": 511,
+        "mr": 492,
+        "or": 1339,
+        "pa": 681,
+        "pt": 317,
+        "ru": 358,
+        "ta": 528,
+        "te": 549,
+        "ur": 449,
+        "zh": 284
+      }
+    },
+    "cl100k_base": {
+      "tokens": {
+        "ar": 801,
+        "bn": 1692,
+        "de": 444,
+        "en": 276,
+        "es": 399,
+        "fr": 416,
+        "gu": 2178,
+        "hi": 1322,
+        "hi-Latn": 422,
+        "id": 432,
+        "ja": 569,
+        "kn": 2545,
+        "ko": 616,
+        "ml": 2525,
+        "mr": 1393,
+        "or": 3382,
+        "pa": 2155,
+        "pt": 382,
+        "ru": 622,
+        "ta": 2131,
+        "te": 2410,
+        "ur": 1249,
+        "zh": 386
+      }
+    }
+  }
+}
