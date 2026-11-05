@@ -1,0 +1,23 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.AiGanak/llm-cost",
+  "title": "AiGanak LLM Cost",
+  "description": "Current LLM API prices, cost estimates, model comparisons and the language token tax for OpenAI, Anthropic and Google models.",
+  "repository": {
+    "url": "https://github.com/AiGanak/llm-prices",
+    "source": "github",
+    "subfolder": "mcp"
+  },
+  "websiteUrl": "https://aiganak.com/llm-api-pricing/",
+  "version": "2026.11.5",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "@aiganak/llm-cost-mcp",
+      "version": "2026.11.5",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ]
+}
