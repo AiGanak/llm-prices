@@ -2,7 +2,7 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.AiGanak/llm-cost",
   "title": "AiGanak LLM Cost",
-  "description": "Current LLM API prices, cost estimates, model comparisons and the language token tax for OpenAI, Anthropic and Google models.",
+  "description": "LLM API prices, cost estimates, model comparisons and language token tax for GPT, Claude and Gemini.",
   "repository": {
     "url": "https://github.com/AiGanak/llm-prices",
     "source": "github",
