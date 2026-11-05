@@ -1,0 +1,16 @@
+{
+  "name": "@aiganak/llm-cost-mcp",
+  "version": "2026.11.5",
+  "description": "MCP server for current LLM API prices, cost estimates, model comparisons and the language token tax (OpenAI, Anthropic, Google). Open data by AiGanak.",
+  "type": "module",
+  "bin": { "aiganak-llm-cost-mcp": "index.js" },
+  "main": "index.js",
+  "files": ["index.js", "data/", "README.md"],
+  "engines": { "node": ">=18" },
+  "dependencies": { "@modelcontextprotocol/sdk": "^1.32.2", "zod": "^3.25.76" },
+  "keywords": ["mcp", "model-context-protocol", "llm", "pricing", "openai", "anthropic", "claude", "gemini", "tokens", "cost", "multilingual"],
+  "homepage": "https://aiganak.com/llm-api-pricing/",
+  "repository": { "type": "git", "url": "git+https://github.com/AiGanak/llm-prices.git", "directory": "mcp" },
+  "license": "MIT",
+  "author": "AiGanak <contact@aiganak.com>"
+}

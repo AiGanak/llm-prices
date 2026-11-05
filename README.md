@@ -7,7 +7,7 @@
 
 Up-to-date list prices for the OpenAI, Anthropic and Google Gemini APIs. Every price is a machine-readable record copied from the provider's own pricing page, with its source and the date it was checked.
 
-- **One dataset, three formats:** [`data/prices.json`](data/prices.json) (with a [JSON Schema](schema/prices.schema.json)), [`data/prices.csv`](data/prices.csv), and a dependency-free Python package.
+- **One dataset, four ways to use it:** an MCP server for AI assistants ([`mcp/`](mcp/)), plus [`data/prices.json`](data/prices.json) (with a [JSON Schema](schema/prices.schema.json)), [`data/prices.csv`](data/prices.csv), and a dependency-free Python package.
 - **Everything that changes the bill:** standard, cached-input and batch rates, cache-write prices, long-context surcharges and announced future price changes.
 - **History:** a dated snapshot for every check in [`data/snapshots/`](data/snapshots/), and a sourced [price change log](data/changes.json).
 
@@ -107,6 +107,14 @@ The package has no dependencies and works offline: the data ships inside it. `ll
 $ llm-prices list --provider anthropic
 $ llm-prices cost claude-opus-5-5 --input 20000 --output 800 --requests 100000
 $ llm-prices compare --input 2000 --output 300 --cached 1500
+```
+
+### In your AI assistant (MCP server)
+
+Ask Claude, Cursor or any MCP client what a workload costs, which model is cheapest, or what the token tax is for a language. See [`mcp/`](mcp/) for the server and setup:
+
+```json
+{ "mcpServers": { "aiganak-llm-cost": { "command": "npx", "args": ["-y", "@aiganak/llm-cost-mcp"] } } }
 ```
 
 ## Data format

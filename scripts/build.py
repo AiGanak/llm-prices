@@ -71,6 +71,25 @@ def main() -> int:
     out(ROOT / "src/llm_prices/data/prices.json", prices_text, stale)
     out(ROOT / "src/llm_prices/data/changes.json", changes_text, stale)
 
+    # 3b. Compact token tax index (for the CDN, the MCP server and other clients).
+    tt_dir = DATA / "token-tax"
+    res = sorted(tt_dir.glob("results-*.json"))
+    if res:
+        models = {}
+        for f in res:
+            models.update(json.loads(f.read_text(encoding="utf-8"))["models"])
+        date = max(json.loads(f.read_text(encoding="utf-8"))["date"] for f in res)
+        chars = {p.stem: len(p.read_text(encoding="utf-8").strip()) for p in sorted(tt_dir.glob("*.txt"))}
+        idx = {"dataset": "language-token-tax", "publisher": d["publisher"], "license": "CC-BY-4.0", "measured": date,
+               "method": "Same 12 business messages per language, official token-count endpoint per model, message overhead removed.",
+               "url": "https://aiganak.com/language-token-tax/", "chars": chars,
+               "models": {m: {"provider": v["provider"], "tokens": v["tokens"]} for m, v in sorted(models.items())}}
+        text = json.dumps(idx, ensure_ascii=False, indent=1) + "\n"
+        out(tt_dir / "index.json", text, stale)
+        out(ROOT / "mcp/data/token-tax.json", text, stale)
+    out(ROOT / "mcp/data/prices.json", prices_text, stale)
+    out(ROOT / "mcp/data/changes.json", changes_text, stale)
+
     # 4. README price table.
     rows = ["| Model | Provider | Tier | Input | Cached input | Output | Batch input | Batch output |", "|---|---|---|--:|--:|--:|--:|--:|"]
     order = {"flagship": 0, "mid": 1, "small": 2}

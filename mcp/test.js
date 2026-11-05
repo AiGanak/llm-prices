@@ -1,0 +1,23 @@
+// Smoke test: starts the server over stdio with bundled data and checks every tool answers correctly.
+import assert from "node:assert/strict";
+import { Client } from "@modelcontextprotocol/sdk/client/index.js";
+import { StdioClientTransport } from "@modelcontextprotocol/sdk/client/stdio.js";
+const c = new Client({ name: "t", version: "1" });
+await c.connect(new StdioClientTransport({ command: "node", args: ["index.js"], env: { ...process.env, LLM_PRICES_OFFLINE: "1" } }));
+const tools = (await c.listTools()).tools.map((t) => t.name); console.log("tools", tools.join(", "));
+const call = async (name, args, expect) => { const r = await c.callTool({ name, arguments: args }); const t = r.content[0].text; for (const e of [].concat(expect || [])) assert.ok(t.includes(e), `${name} ${JSON.stringify(args)}: expected "${e}" in\n${t}`); return r; };
+await call("estimate_cost", { model: "gpt-6.1-terra", input_tokens: 2000, output_tokens: 300 }, ["$0.0035 each"]);
+await call("estimate_cost", { model: "Claude Sonnet 5.5", input_tokens: 6000, output_tokens: 500, cached_input_tokens: 4000, requests: 10000 }, ["$94.00 for 10,000 requests"]);
+await call("estimate_cost", { model: "gemini-4-argon", input_tokens: 2000, output_tokens: 300, date: "2026-12-01" }, ["$0.014", "input $4.00"]);
+await call("estimate_cost", { model: "gpt-6-astra", input_tokens: 300000, output_tokens: 1000, batch: true }, ["not listed"]);
+await call("compare_models", { input_tokens: 2000, output_tokens: 300, tier: "mid" }, ["1. Gemini 3.8 Flash"]);
+await call("token_tax", { language: "Tamil" }, ["1.36×", "3.21×"]);
+await call("token_tax", { language: "hinglish" }, ["1.41×", "1.55×"]);
+await call("estimate_text_cost", { text: "कृपया अपना ऑर्डर नंबर साझा करें, ताकि हम आपके लिए इसकी जाँच कर सकें।", model: "claude-sonnet-5-5", messages: 100000 }, ["Hindi (detected)", "2.28×"]);
+await call("get_model_price", { model: "gpt-6-astra" }, ["$12.50", "272,000"]);
+await call("price_changes", { limit: 2 }, ["GPT-6.1 Terra released"]);
+await call("token_tax", {}, ["Odia"]);
+await call("list_models", { provider: "Google" }, ["$0.075", "$0.375"]);
+await call("estimate_cost", { model: "nope", input_tokens: 1, output_tokens: 1 }).then((r) => assert.ok(r.isError));
+console.log("all tool checks passed");
+await c.close();
