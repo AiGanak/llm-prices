@@ -8,6 +8,8 @@ import llm_prices as lp
 
 
 def _usd(x: float) -> str:
+    if x >= 1:
+        return f"${x:,.2f}"
     return f"${x:,.6f}".rstrip("0").rstrip(".") if x < 0.01 else f"${x:,.4f}"
 
 

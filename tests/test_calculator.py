@@ -64,5 +64,5 @@ def test_filters_and_changes():
 def test_cli(capsys):
     from llm_prices.__main__ import main
     assert main(["cost", "gpt-6.1-terra", "--input", "2000", "--output", "300", "--requests", "1000"]) == 0
-    assert "$3.5000 for 1,000 requests" in capsys.readouterr().out
+    assert "$3.50 for 1,000 requests" in capsys.readouterr().out
     assert main(["cost", "nope", "--input", "1", "--output", "1"]) == 2
