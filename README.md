@@ -77,8 +77,10 @@ Pin a dated version for reproducible results: `.../llm-prices@v2026.11.02/data/p
 
 ### Python
 
+[![PyPI](https://img.shields.io/pypi/v/aiganak-llm-prices)](https://pypi.org/project/aiganak-llm-prices/)
+
 ```bash
-pip install "git+https://github.com/AiGanak/llm-prices"
+pip install aiganak-llm-prices
 ```
 
 ```python
