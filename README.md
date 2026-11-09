@@ -33,7 +33,7 @@ Maintained by [AiGanak](https://aiganak.com). The same data powers the free [LLM
 | [Gemini 3.1 Flash-Lite](https://ai.google.dev/gemini-api/docs/pricing)<br>`gemini-3.1-flash-lite` | Google | Small | $0.25 | $0.025 | $1.50 | $0.125 | $0.75 |
 | [GPT-6 Luna](https://developers.openai.com/api/docs/models/gpt-6-luna)<br>`gpt-6-luna` | OpenAI | Small | $0.10 | $0.01 | $0.50 | $0.05 | $0.25 |
 
-USD per million tokens, standard tier, text. Checked 2026-11-02.
+USD per million tokens, standard tier, text. Checked 2026-11-09.
 
 ¹ Announced price change: Gemini 4 Argon: $4 input / $20 output from 2026-12-01; Gemini 3.8 Flash: $1.50 input / $7.50 output from 2027-01-01.
 <!-- prices:end -->

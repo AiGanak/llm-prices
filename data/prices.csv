@@ -1,15 +1,15 @@
 id,provider,name,tier,status,input,cached_input,output,batch_input,batch_cached_input,batch_output,cache_write,long_context_threshold_tokens,long_context_input,long_context_output,next_change_effective,next_input,next_output,source_url,checked
-gpt-6-astra,OpenAI,GPT-6 Astra,flagship,active,10,1,50,5,0.5,25,12.5,272000,20,75,,,,https://developers.openai.com/api/docs/models/gpt-6-astra,2026-11-02
-gpt-6.1-sol,OpenAI,GPT-6.1 Sol,mid,active,2,0.1,10,1,0.05,5,2.5,272000,4,15,,,,https://developers.openai.com/api/docs/models/gpt-6.1-sol,2026-11-02
-gpt-6.1-terra,OpenAI,GPT-6.1 Terra,mid,active,1,0.05,5,0.5,0.025,2.5,1.25,272000,2,7.5,,,,https://developers.openai.com/api/docs/models/gpt-6.1-terra,2026-11-02
-gpt-6-luna,OpenAI,GPT-6 Luna,small,active,0.1,0.01,0.5,0.05,0.005,0.25,0.125,272000,0.2,0.75,,,,https://developers.openai.com/api/docs/models/gpt-6-luna,2026-11-02
-claude-fable-5-1,Anthropic,Claude Fable 5.1,flagship,active,10,0.25,50,5,0.125,25,12.5,,,,,,,https://platform.claude.com/docs/en/about-claude/pricing,2026-11-02
-claude-opus-5-5,Anthropic,Claude Opus 5.5,flagship,active,4,0.2,20,2,0.1,10,5,,,,,,,https://platform.claude.com/docs/en/about-claude/pricing,2026-11-02
-claude-sonnet-5-5,Anthropic,Claude Sonnet 5.5,mid,active,2,0.1,10,1,0.05,5,2.5,,,,,,,https://platform.claude.com/docs/en/about-claude/pricing,2026-11-02
-claude-haiku-5-5,Anthropic,Claude Haiku 5.5,small,active,0.1,0.01,0.5,0.05,0.005,0.25,0.125,100000,0.5,2.5,,,,https://platform.claude.com/docs/en/about-claude/pricing,2026-11-02
-claude-haiku-4-5,Anthropic,Claude Haiku 4.5,small,legacy,1,0.1,5,0.5,0.05,2.5,1.25,,,,,,,https://platform.claude.com/docs/en/about-claude/pricing,2026-11-02
-gemini-4-argon,Google,Gemini 4 Argon,flagship,active,2,0.1,10,1,0.05,5,,,,,2026-12-01,4,20,https://ai.google.dev/gemini-api/docs/pricing,2026-11-02
-gemini-3.1-pro-preview,Google,Gemini 3.1 Pro (preview),flagship,preview,2,0.2,12,1,0.2,6,,200000,4,18,,,,https://ai.google.dev/gemini-api/docs/pricing,2026-11-02
-gemini-3.8-flash,Google,Gemini 3.8 Flash,mid,active,0.75,0.075,3.75,0.375,0.0375,1.875,,,,,2027-01-01,1.5,7.5,https://ai.google.dev/gemini-api/docs/pricing,2026-11-02
-gemini-3.5-flash-lite,Google,Gemini 3.5 Flash-Lite,small,active,0.3,0.03,2.5,0.15,0.02,1.25,,,,,,,,https://ai.google.dev/gemini-api/docs/pricing,2026-11-02
-gemini-3.1-flash-lite,Google,Gemini 3.1 Flash-Lite,small,active,0.25,0.025,1.5,0.125,0.0125,0.75,,,,,,,,https://ai.google.dev/gemini-api/docs/pricing,2026-11-02
+gpt-6-astra,OpenAI,GPT-6 Astra,flagship,active,10,1,50,5,0.5,25,12.5,272000,20,75,,,,https://developers.openai.com/api/docs/models/gpt-6-astra,2026-11-09
+gpt-6.1-sol,OpenAI,GPT-6.1 Sol,mid,active,2,0.1,10,1,0.05,5,2.5,272000,4,15,,,,https://developers.openai.com/api/docs/models/gpt-6.1-sol,2026-11-09
+gpt-6.1-terra,OpenAI,GPT-6.1 Terra,mid,active,1,0.05,5,0.5,0.025,2.5,1.25,272000,2,7.5,,,,https://developers.openai.com/api/docs/models/gpt-6.1-terra,2026-11-09
+gpt-6-luna,OpenAI,GPT-6 Luna,small,active,0.1,0.01,0.5,0.05,0.005,0.25,0.125,272000,0.2,0.75,,,,https://developers.openai.com/api/docs/models/gpt-6-luna,2026-11-09
+claude-fable-5-1,Anthropic,Claude Fable 5.1,flagship,active,10,0.25,50,5,0.125,25,12.5,,,,,,,https://platform.claude.com/docs/en/about-claude/pricing,2026-11-09
+claude-opus-5-5,Anthropic,Claude Opus 5.5,flagship,active,4,0.2,20,2,0.1,10,5,,,,,,,https://platform.claude.com/docs/en/about-claude/pricing,2026-11-09
+claude-sonnet-5-5,Anthropic,Claude Sonnet 5.5,mid,active,2,0.1,10,1,0.05,5,2.5,,,,,,,https://platform.claude.com/docs/en/about-claude/pricing,2026-11-09
+claude-haiku-5-5,Anthropic,Claude Haiku 5.5,small,active,0.1,0.01,0.5,0.05,0.005,0.25,0.125,100000,0.5,2.5,,,,https://platform.claude.com/docs/en/about-claude/pricing,2026-11-09
+claude-haiku-4-5,Anthropic,Claude Haiku 4.5,small,legacy,1,0.1,5,0.5,0.05,2.5,1.25,,,,,,,https://platform.claude.com/docs/en/about-claude/pricing,2026-11-09
+gemini-4-argon,Google,Gemini 4 Argon,flagship,active,2,0.1,10,1,0.05,5,,,,,2026-12-01,4,20,https://ai.google.dev/gemini-api/docs/pricing,2026-11-09
+gemini-3.1-pro-preview,Google,Gemini 3.1 Pro (preview),flagship,preview,2,0.2,12,1,0.2,6,,200000,4,18,,,,https://ai.google.dev/gemini-api/docs/pricing,2026-11-09
+gemini-3.8-flash,Google,Gemini 3.8 Flash,mid,active,0.75,0.075,3.75,0.375,0.0375,1.875,,,,,2027-01-01,1.5,7.5,https://ai.google.dev/gemini-api/docs/pricing,2026-11-09
+gemini-3.5-flash-lite,Google,Gemini 3.5 Flash-Lite,small,active,0.3,0.03,2.5,0.15,0.02,1.25,,,,,,,,https://ai.google.dev/gemini-api/docs/pricing,2026-11-09
+gemini-3.1-flash-lite,Google,Gemini 3.1 Flash-Lite,small,active,0.25,0.025,1.5,0.125,0.0125,0.75,,,,,,,,https://ai.google.dev/gemini-api/docs/pricing,2026-11-09
