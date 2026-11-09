@@ -33,3 +33,13 @@ jobs:
       - run: npm ci
       - name: MCP server tool checks (bundled data)
         run: node test.js
+
+  js:
+    runs-on: ubuntu-latest
+    defaults: { run: { working-directory: js } }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - name: npm package tests (bundled data matches data/prices.json)
+        run: npm test

@@ -1,0 +1,17 @@
+{
+  "name": "@aiganak/llm-prices",
+  "version": "2026.11.2",
+  "description": "LLM API list prices for OpenAI, Anthropic and Google models, with a token cost calculator. No dependencies. Open data by AiGanak.",
+  "type": "module",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "exports": { ".": { "types": "./index.d.ts", "default": "./index.js" }, "./prices.json": "./data/prices.json" },
+  "files": ["index.js", "index.d.ts", "data/", "README.md"],
+  "engines": { "node": ">=18" },
+  "scripts": { "test": "node --test" },
+  "keywords": ["llm", "pricing", "openai", "anthropic", "claude", "gemini", "tokens", "cost", "finops"],
+  "homepage": "https://aiganak.com/llm-api-pricing/",
+  "repository": { "type": "git", "url": "git+https://github.com/AiGanak/llm-prices.git", "directory": "js" },
+  "license": "MIT",
+  "author": "AiGanak <contact@aiganak.com>"
+}

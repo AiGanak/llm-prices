@@ -89,6 +89,8 @@ def main() -> int:
         out(ROOT / "mcp/data/token-tax.json", text, stale)
     out(ROOT / "mcp/data/prices.json", prices_text, stale)
     out(ROOT / "mcp/data/changes.json", changes_text, stale)
+    out(ROOT / "js/data/prices.json", prices_text, stale)
+    out(ROOT / "js/data/changes.json", changes_text, stale)
 
     # 4. README price table.
     rows = ["| Model | Provider | Tier | Input | Cached input | Output | Batch input | Batch output |", "|---|---|---|--:|--:|--:|--:|--:|"]
