@@ -83,7 +83,13 @@ def main() -> int:
         idx = {"dataset": "language-token-tax", "publisher": d["publisher"], "license": "CC-BY-4.0", "measured": date,
                "method": "Same 12 business messages per language, official token-count endpoint per model, message overhead removed.",
                "url": "https://aiganak.com/language-token-tax/", "chars": chars,
-               "models": {m: {"provider": v["provider"], "tokens": v["tokens"]} for m, v in sorted(models.items())}}
+               "models": {m: {"provider": v["provider"], "tokens": v["tokens"]} for m, v in sorted(models.items())},
+               }
+        ow = sorted(tt_dir.glob("open-weights-*.json"))
+        if ow:  # open-weight tokenizers, counted locally; kept separate from the API-measured models
+            o = json.loads(ow[-1].read_text(encoding="utf-8"))
+            idx["open_weights"] = {"measured": o["date"], "method": o["method"],
+                                   "models": {m: {"family": v["family"], "tokens": v["tokens"]} for m, v in sorted(o["models"].items())}}
         text = json.dumps(idx, ensure_ascii=False, indent=1) + "\n"
         out(tt_dir / "index.json", text, stale)
         out(ROOT / "mcp/data/token-tax.json", text, stale)

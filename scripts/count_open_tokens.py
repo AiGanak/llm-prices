@@ -6,7 +6,7 @@ by counting tokens locally with each model's own published tokenizer. No API key
     python3 scripts/count_open_tokens.py Qwen/Qwen3-8B sarvamai/sarvam-m   # or chosen repos
 
 Tokenizers are downloaded once from Hugging Face (public repositories only).
-Output: data/token-tax/results-<date>-open.json, same shape as count_tokens.py results.
+Output: data/token-tax/open-weights-<date>.json (kept apart from the API results-*.json files).
 """
 from __future__ import annotations
 
@@ -53,7 +53,7 @@ def main() -> int:
     if not out["models"]:
         print("No tokenizers loaded. Check your internet connection to huggingface.co.")
         return 1
-    path = CORPUS / f"results-{out['date']}-open.json"
+    path = CORPUS / f"open-weights-{out['date']}.json"
     path.write_text(json.dumps(out, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print(f"\nSaved {path.relative_to(ROOT)}")
     return 0

@@ -24,3 +24,7 @@ Token tax for a language = tokens for that language's text ÷ tokens for the Eng
 Translations were written by AiGanak for this corpus. Corrections from native speakers are welcome as issues or pull requests.
 
 Licence: CC BY 4.0, like the rest of `data/`.
+
+## Open-weight models
+
+`open-weights-<date>.json` holds token counts for open-weight models you can host yourself (Qwen, DeepSeek, Llama 3, Gemma 3, Mistral Nemo and Sarvam-M), counted locally with each model's published Hugging Face tokenizer, raw text without a chat template. Run `python3 scripts/count_open_tokens.py` to reproduce. Sarvam-M uses the same tokenizer as Mistral, so its counts are identical. `index.json` includes these under `open_weights`, separate from the API-measured models.
